@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0t3n24d" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.10.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="po-process-employee-task" name="EmployeeTask" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1rjzwvf</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_1h0y8dd">
+      <bpmn:incoming>Flow_0t7cldd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:endEvent id="Event_15t3az8">
+      <bpmn:incoming>Flow_1bjjhc3</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1rjzwvf" sourceRef="StartEvent_1" targetRef="po-process-employe-task" />
+    <bpmn:sequenceFlow id="Flow_1gcr259" sourceRef="po-process-employe-task" targetRef="po-process-manager-task" />
+    <bpmn:sequenceFlow id="Flow_0dnkmw0" sourceRef="po-process-manager-task" targetRef="Gateway_1subjx3" />
+    <bpmn:sequenceFlow id="Flow_1bjjhc3" sourceRef="po-process-ceo-task" targetRef="Event_15t3az8" />
+    <bpmn:exclusiveGateway id="Gateway_1subjx3" name="Over Amount ??">
+      <bpmn:incoming>Flow_0dnkmw0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0793b1o</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0t7cldd</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0793b1o" name="Yes" sourceRef="Gateway_1subjx3" targetRef="po-process-ceo-task">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${amount&gt;=100000}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0t7cldd" name="No" sourceRef="Gateway_1subjx3" targetRef="Event_1h0y8dd">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${amount&lt;100000}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:userTask id="po-process-employe-task" name="Employee_Task">
+      <bpmn:incoming>Flow_1rjzwvf</bpmn:incoming>
+      <bpmn:outgoing>Flow_1gcr259</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="po-process-manager-task" name="Manager_Task">
+      <bpmn:incoming>Flow_1gcr259</bpmn:incoming>
+      <bpmn:outgoing>Flow_0dnkmw0</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="po-process-ceo-task" name="CEO_Task">
+      <bpmn:incoming>Flow_0793b1o</bpmn:incoming>
+      <bpmn:outgoing>Flow_1bjjhc3</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="po-process-employee-task">
+      <bpmndi:BPMNEdge id="Flow_1rjzwvf_di" bpmnElement="Flow_1rjzwvf">
+        <di:waypoint x="215" y="170" />
+        <di:waypoint x="290" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1gcr259_di" bpmnElement="Flow_1gcr259">
+        <di:waypoint x="390" y="170" />
+        <di:waypoint x="520" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0dnkmw0_di" bpmnElement="Flow_0dnkmw0">
+        <di:waypoint x="620" y="170" />
+        <di:waypoint x="705" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1bjjhc3_di" bpmnElement="Flow_1bjjhc3">
+        <di:waypoint x="950" y="170" />
+        <di:waypoint x="1022" y="170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0793b1o_di" bpmnElement="Flow_0793b1o">
+        <di:waypoint x="755" y="170" />
+        <di:waypoint x="850" y="170" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="794" y="152" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0t7cldd_di" bpmnElement="Flow_0t7cldd">
+        <di:waypoint x="730" y="195" />
+        <di:waypoint x="730" y="302" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="738" y="246" width="15" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_15t3az8_di" bpmnElement="Event_15t3az8">
+        <dc:Bounds x="1022" y="152" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1036" y="195" width="8" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="152" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="193" y="195" width="8" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1subjx3_di" bpmnElement="Gateway_1subjx3" isMarkerVisible="true">
+        <dc:Bounds x="705" y="145" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="691" y="115" width="81" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1h0y8dd_di" bpmnElement="Event_1h0y8dd">
+        <dc:Bounds x="712" y="302" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="726" y="345" width="8" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0fzicfx_di" bpmnElement="po-process-employe-task">
+        <dc:Bounds x="290" y="130" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1c6pwhq_di" bpmnElement="po-process-manager-task">
+        <dc:Bounds x="520" y="130" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0dip3rf_di" bpmnElement="po-process-ceo-task">
+        <dc:Bounds x="850" y="130" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

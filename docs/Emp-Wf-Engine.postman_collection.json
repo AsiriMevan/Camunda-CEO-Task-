@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "9adf1796-10d7-4b81-bcfd-8057ce8bfa27",
+		"name": "Emp-Wf-Engine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9667423"
+	},
+	"item": [
+		{
+			"name": "Create PO Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"purchaseOrder\" :{\r\n        \"item\":\"new item\",\r\n        \"amount\":90000\r\n        },\r\n    \"businessKey\":\"emp-process-businesskey\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/camunda-wf/api/emp-process/create-task/po-process-employee-task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"camunda-wf",
+						"api",
+						"emp-process",
+						"create-task",
+						"po-process-employee-task"
+					]
+				},
+				"description": "Create PO request"
+			},
+			"response": []
+		},
+		{
+			"name": "Emp - Claim Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YW50b255X2RpZ2lyYXRpbmE6VDR1NWhAMDkwMQ==",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/camunda-wf/api/emp-process/claim-task/3d210681-4f6c-11ed-9f3e-5ee0c5d70a14?userId=antony_digiratina",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"camunda-wf",
+						"api",
+						"emp-process",
+						"claim-task",
+						"3d210681-4f6c-11ed-9f3e-5ee0c5d70a14"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "antony_digiratina"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Emp - Complete Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YW50b255X2RpZ2lyYXRpbmE6MTIzNDU=",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item\":\"new item\",\r\n    \"amount\":90000\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/camunda-wf/api/emp-process/complete-task/3d1b2871-4f93-11ed-9f3e-5ee0c5d70a14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"camunda-wf",
+						"api",
+						"emp-process",
+						"complete-task",
+						"3d1b2871-4f93-11ed-9f3e-5ee0c5d70a14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Manager - Claim Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YW50b255X2RpZ2lyYXRpbmE6VDR1NWhAMDkwMQ==",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/camunda-wf/api/mng-process/claim-task/3d1b2871-4f93-11ed-9f3e-5ee0c5d70a14?userId=antony_digiratina",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"camunda-wf",
+						"api",
+						"mng-process",
+						"claim-task",
+						"3d1b2871-4f93-11ed-9f3e-5ee0c5d70a14"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "antony_digiratina"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Manager- Complete Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YW50b255X2RpZ2lyYXRpbmE6MTIzNDU=",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item\":\"item\",\r\n    \"amount\":90000\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/camunda-wf/api/mng-process/complete-task/9a71b2df-5033-11ed-9f3e-5ee0c5d70a14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"camunda-wf",
+						"api",
+						"mng-process",
+						"complete-task",
+						"9a71b2df-5033-11ed-9f3e-5ee0c5d70a14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CEO- Claim Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YW50b255X2RpZ2lyYXRpbmE6VDR1NWhAMDkwMQ==",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/camunda-wf/api/ceo-process/claim-task/640a6793-5037-11ed-9f3e-5ee0c5d70a14?userId=antony_digiratina",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"camunda-wf",
+						"api",
+						"ceo-process",
+						"claim-task",
+						"640a6793-5037-11ed-9f3e-5ee0c5d70a14"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "antony_digiratina"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CEO- Complete Task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YW50b255X2RpZ2lyYXRpbmE6MTIzNDU=",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"item\":\"item\",\r\n    \"amount\":100000\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/camunda-wf/api/ceo-process/complete-task/7b9db6ac-5037-11ed-9f3e-5ee0c5d70a14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"camunda-wf",
+						"api",
+						"ceo-process",
+						"complete-task",
+						"7b9db6ac-5037-11ed-9f3e-5ee0c5d70a14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Emp - GetTask",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic YW50b255X2RpZ2lyYXRpbmE6VDR1NWhAMDkwMQ==",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/camunda-wf/api/emp-process/task?processInstanceId=07a57188-5106-11ed-9f3e-5ee0c5d70a14&processInstanceBusinessKey=emp-process-businesskey",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"camunda-wf",
+						"api",
+						"emp-process",
+						"task"
+					],
+					"query": [
+						{
+							"key": "processInstanceId",
+							"value": "07a57188-5106-11ed-9f3e-5ee0c5d70a14"
+						},
+						{
+							"key": "processInstanceBusinessKey",
+							"value": "emp-process-businesskey"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

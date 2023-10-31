@@ -1,0 +1,23 @@
+
+t
+java:S2293/"YReplace the type specification in this constructor call with the diamond operator ("<>").(‘ÔÇ ûÿÿÿÿ
+d
+java:S1192<"NDefine a constant instead of duplicating this literal "#businessKey#" 3 times.(¬‡Áë
+c
+java:S1192<"MDefine a constant instead of duplicating this literal "#instanceId#" 3 times.(¬‡Áë
+P
+java:S1141>"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+P
+java:S1141|"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+@
+java:S2629A"$Invoke method(s) only conditionally.(ìª£8æ©œÓì0
+@
+java:S2629"$Invoke method(s) only conditionally.(ìª£8æ©œÓì0
+A
+java:S2629—"$Invoke method(s) only conditionally.(ìª£8æ©œÓì0
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³Äô—
+f
+java:S2259"CA "NullPointerException" could be thrown; "tasks" is nullable here.(œœîóûÿÿÿÿ8ªœÓì0
+X	java:S125"<This block of commented-out lines of code should be removed.(öü®µ8¤¶ŸÑì0
+I
+java:S1168œ"+Return an empty collection instead of null.(¥¹ï8™ªœÓì0
